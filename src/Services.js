@@ -28,7 +28,7 @@ function Service() {
     <div className="service component__space" id="Services">
       <div className="heading">
         <h1 className="heading">Our Service</h1>
-        <p className="heading p__color">Classify your dog here</p>
+        <p className="heading p__color">Predict your dog here</p>
         <p className="heading p__color"></p>
       </div>
       <div className="container">
