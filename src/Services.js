@@ -3,12 +3,14 @@ import "./Services.css";
 
 function Service() {
   const [selectedFile, setSelectedFile] = useState();
-
+  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [predictedDog, setPredictedDog] = useState("HUSKY");
   const changeHandler = (event) => {
     setSelectedFile(event.target.files[0]);
   };
 
   const handleSubmission = () => {
+    setIsSubmitted(true);
     const formData = new FormData();
     formData.append("File", selectedFile);
     fetch(`${process.env.REACT_APP_BACKEND_SERVER}`, {
@@ -17,7 +19,10 @@ function Service() {
     })
       .then((response) => response.json())
       .then((result) => {
-        console.log("Success:", result);
+        console.log(result);
+        console.log(result.data);
+
+        setPredictedDog(result);
       })
       .catch((error) => {
         console.error("Error:", error);
@@ -85,6 +90,29 @@ function Service() {
             >
               Submit
             </button>
+            {isSubmitted ? (
+              <div>
+                <h1
+                  style={{
+                    textAlign: "center",
+                    paddingTop: 20,
+                    fontSize: 30,
+                  }}
+                >
+                  Predicted Dog
+                </h1>
+                <h1
+                  style={{
+                    textAlign: "center",
+                    paddingTop: 28,
+                  }}
+                >
+                  Shiba Inu
+                </h1>
+              </div>
+            ) : (
+              <h1></h1>
+            )}
           </div>
         </div>
       </div>
