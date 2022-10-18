@@ -27,8 +27,7 @@ function About() {
               <p className="about__text p__color">
                 The software accepts as input any image provided by the user. If
                 a dog is detected in the image, an estimate of the dog's breed
-                is provided. When a human is found, it provides an estimate of
-                the dog breed that most closely resembles that human.
+                is provided in Text format below.
               </p>
 
               <div className="about__button d__flex align__items__center">
