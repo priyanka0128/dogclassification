@@ -30,11 +30,7 @@ function About() {
                 is provided in Text format below.
               </p>
 
-              <div className="about__button d__flex align__items__center">
-                {/* <a href="#">
-                  <button className="about btn pointer">Upload Image</button>
-                </a> */}
-              </div>
+              <div className="about__button d__flex align__items__center"></div>
             </div>
           </div>
         </div>
